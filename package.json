@@ -5,9 +5,13 @@
   "main": "server.js",
   "scripts": {
     "test": "mocha",
-    "start": "node server.js",
-    "dev:server": "nodemon --watch './**/*.ts' --exec 'ts-node' ./src/server.ts",
-    "db:reset": "node bin/resetdb.js"
+    "start": "node ./src/dist/server.js",
+    "postinstall": "tsc",
+    "watch-node": "nodemon ./src/dist/server.js",
+    "watch-ts": "tsc -w",
+    "deploy": "git add . && git commit -m Heroku && git push heroku master",
+    "db:reset": "node bin/resetdb.js",
+    "build": "tsc"
   },
   "author": "",
   "license": "ISC",
