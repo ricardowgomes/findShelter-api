@@ -10,7 +10,7 @@
     "watch-node": "nodemon ./src/dist/server.js",
     "watch-ts": "tsc -w",
     "deploy": "git add . && git commit -m Heroku && git push heroku master",
-    "db:reset": "node bin/resetdb.js",
+    "db:reset": "node ./src/bin/resetdb.js",
     "build": "tsc"
   },
   "author": "",
